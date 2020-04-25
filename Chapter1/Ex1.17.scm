@@ -4,7 +4,7 @@
 (define (is-even? x) (= (remainder x 2) 0))
 
 (define (multi a b)
-  (cond ((= b 1) a)
+  (cond ((= b 0) 0)
 		((is-even? b)
 		 (double (multi a (halve b))))
 		(else

@@ -32,7 +32,7 @@
 		(else
 		  (find-divisor n (+ test-divisor 1)))))
 
-(define (divides? n test-divisor)
+(define (divides? test-divisor n)
   (= (remainder n test-divisor) 0))
 
 

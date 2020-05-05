@@ -24,3 +24,11 @@
 		   		3.0
 		   		pi-next
 		   		(+ 3.0 (* n 2.0)))))
+
+;;; b. Define product as an iterative process
+(define (product term a next b)
+  (define (product-iter a result)
+	(if (> a b)
+	    result
+		(product-iter (next a) (* result (term a)))))
+  (product-iter a 1))

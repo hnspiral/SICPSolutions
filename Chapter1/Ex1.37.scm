@@ -13,7 +13,7 @@ Value: .6180339887498948
 ;;;b. Define cont-frac as iterative process
 (define (cont-frac n d k)
   (define (iter i result)
-	(if (= i 1)
+	(if (= i 0)
 	    result
 		(iter (- i 1) (/ (n i) (+ (d i) result)))))
   (iter k 0))

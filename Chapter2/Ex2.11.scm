@@ -63,6 +63,8 @@
 (define (negative? x) (< x 0))
 (define (non-negative? x) (not (< x 0)))
 
+;;; Define interval programs that deals with numbers represented as a center
+;;; value and an additive tolerance
 ;;; Modified  div-interval to signal error if dividing by an interval that
 ;;; spans zero
 (define (div-interval x y)
@@ -96,10 +98,10 @@
 
  ;;; Width of intervals
  (define (width interval)
-   (average (lower-bound interval)
-            (upper-bound interval)))
+   (/ (- (upper-bound interval)
+         (lower-bound interval))
+	  2.0))
 
- (define (average a b) (/ (+ a b) 2))
 
 
 
